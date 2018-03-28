@@ -23,13 +23,13 @@ namespace LINQExtensions
         {
             List<Person> people = new List<Person>
             {
-                new Person{ FirstName = "Sona", LastName = "Hakobyan" },
-                new Person{ FirstName = "Suren", LastName = "Hakobyan" },
-                new Person{ FirstName = "Hakob", LastName = "Hakobyan" },
-                new Person{ FirstName = "Naira", LastName = "Khalatyan" },
+                new Person{ FirstName = "FirstNameA", LastName = "LastName" },
+                new Person{ FirstName = "FirstNameB", LastName = "LastName" },
+                new Person{ FirstName = "OtherName", LastName = "LastName" },
+                new Person{ FirstName = "Other", LastName = "Other" },
             };
 
-            IEnumerable<Char> filtered = people.ExtensionWhere(x => x.LastName == "Hakobyan" && x.FirstName.StartsWith("S")).ExtensionSelect(x => x.FirstName).Where(x => x.Contains("u")).Select(x => x[0]);
+            IEnumerable<Char> filtered = people.ExtensionWhere(x => x.LastName == "LastName" && x.FirstName.StartsWith("F")).ExtensionSelect(x => x.FirstName).Where(x => x.Contains("B")).Select(x => x[0]);
 
             foreach (Char p in filtered)
             {
